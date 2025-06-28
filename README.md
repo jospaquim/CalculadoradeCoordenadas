@@ -4,7 +4,7 @@ Una herramienta para calcular coordenadas exactas en documentos PDF, perfecto pa
 
 ## Demo
 
-**[Usar la herramienta aquí](https://jospaquim.github.io/CalculadoradeCoordenadas/)**
+**[Usar la herramienta aquí](https://jospaquim.github.io/PDFCoordinateCalculator/)**
 
 ## Características
 
