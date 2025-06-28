@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Coordenadas PDF</title>
+    <title>PDF Coordinate Calculator</title>
+    <meta name="description" content="Herramienta web gratuita para calcular coordenadas exactas en PDFs. Perfecta para posicionar firmas digitales, sellos y elementos con iText, PDFSharp y más.">
+    <meta name="keywords" content="PDF, coordenadas, iText, PDFSharp, firma digital, posicionamiento, desarrollo">
+    <meta name="author" content="PDF Coordinate Calculator">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/jospaquim/PDFCoordinateCalculator/">
+    <meta property="og:title" content="PDF Coordinate Calculator - Herramienta para Desarrolladores">
+    <meta property="og:description" content="Calcula coordenadas exactas en PDFs con un simple clic. Ideal para firmas digitales y posicionamiento preciso.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/jospaquim/PDFCoordinateCalculator">
+    <meta property="twitter:title" content="PDF Coordinate Calculator">
+    <meta property="twitter:description" content="Herramienta para calcular coordenadas en PDFs">
+    
+    <link rel="canonical" href="https://tuusuario.github.io/pdf-coordinate-calculator/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <style>
         body {
@@ -153,13 +171,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Coordenadas PDF</h1>
-        <p>Carga un PDF y haz clic donde quieres posicionar la firma para obtener las coordenadas exactas.</p>
+        <header>
+            <h1>PDF Coordinate Calculator</h1>
+            <p>Herramienta para calcular coordenadas exactas en PDFs. Perfecta para trabajar con firmas digitales, sellos y posicionamiento preciso usando iText, PDFSharp y otras librerías.</p>
+            <div style="text-align: center; margin: 15px 0;">
+                <a href="https://github.com/jospaquim/PDFCoordinateCalculator" target="_blank" 
+                   style="display: inline-block; padding: 8px 16px; background: #333; color: white; text-decoration: none; border-radius: 5px; margin: 0 5px;">
+                    ⭐ GitHub
+                </a>
+                <a href="#how-to-use" 
+                   style="display: inline-block; padding: 8px 16px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 0 5px;">
+                    Cómo usar
+                </a>
+            </div>
+        </header>
         
         <div class="upload-area" id="uploadArea">
             <input type="file" id="fileInput" accept=".pdf" style="display: none;">
             <div>
-                <p>📄 Arrastra un archivo PDF aquí o haz clic para seleccionar</p>
+                <p>Arrastra un archivo PDF aquí o haz clic para seleccionar</p>
                 <p style="color: #666; font-size: 14px;">Máximo 10MB</p>
             </div>
         </div>
@@ -223,6 +253,27 @@
                 </div>
             </div>
         </div>
+        
+        <footer style="margin-top: 40px; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #666;">
+            <div id="how-to-use" style="margin-bottom: 20px;">
+                <h3>Cómo usar esta herramienta:</h3>
+                <ol style="display: inline-block; text-align: left; max-width: 600px;">
+                    <li><strong>Carga tu PDF:</strong> Arrastra el archivo o haz clic en el área de carga</li>
+                    <li><strong>Navega:</strong> Usa los botones para ir a la página donde quieres posicionar el elemento</li>
+                    <li><strong>Haz clic:</strong> Clickea exactamente donde quieres que aparezca tu firma/sello</li>
+                    <li><strong>Ajusta:</strong> Modifica el tamaño usando los controles laterales</li>
+                    <li><strong>Copia:</strong> Usa el código C# generado en tu proyecto</li>
+                </ol>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>Casos de uso:</strong> Firmas digitales • Sellos • Marcas de agua • Campos de formulario • Layout de documentos
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>Compatible con:</strong> iText • PDFSharp • ReportLab • jsPDF • TCPDF
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -404,7 +455,7 @@ document.Add(new Paragraph(String.Format("Fecha: {0:dd/MM/yyyy HH:mm:ss}", fecha
     .SetFontSize(6)
     .SetFixedPosition(${currentPage}, left + 10, bottom + ${height - 50}, ${width - 20}));`;
 
-            document.getElementById('codeOutput').textContent = code;
+        document.getElementById('codeOutput').innerHTML = `<pre style="margin: 0; white-space: pre-wrap; word-wrap: break-word;">${code}</pre>`;
         }
 
         // Posiciones predefinidas
